@@ -1,28 +1,45 @@
 import React from 'react'
 import { data } from '../data'
-import BaseComponent from 'bootstrap/js/dist/base-component'
 
 
-export const ProductList = ({allProducts, setAllProducts}) => {
-
-    const onAddProduct =()=>{
-        console.log("add")
-    }
-  return (
-    <section className='contenedor'>
-    <div className='contenedor-producto'>
-      {data.map(product =>(
-        <div className="producto">                
-        <span className="nombre-producto">{product.nombre}</span>
-        <img src={product.imagen} alt={product.alt} className="imagen-producto"/>
-        <span className={product.precio}></span>
-        <button onClick={()=> onAddProduct()} className="boton-producto">Añadir al carrito</button>
+export const ProductList = ({ productoCarro, setearCarro, contadorProductos, setearContador, total,setTotal }) => {
+    const onAddProduct = (product) => {
+        if(productoCarro.find(item => item.id === product.id)){
+            const products = productoCarro.map(item => 
+                item.id === product.id 
+                ? {... item, cantidad: item.cantidad + 1} 
+                : item
+                );
+                  setTotal(total + product.precio * product.cantidad)
+                  setearContador(contadorProductos + product.cantidad)
+                
+            return setearCarro([...products])
+          }
+          setTotal(total + product.precio * product.cantidad)
+          setearContador(contadorProductos + product.cantidad)
+          setearCarro([...productoCarro, product]);
+    };
+  
+    
+  
+    return (
+      <section className='contenedor'>
+        <div className='contenedor-producto'>
+          {data.map((product) => (
+            <div className='producto' key={product.id}>
+              <span className='nombre-producto'>{product.nombre}</span>
+              <img src={product.imagen} alt={product.alt} className='imagen-producto' />
+              <span className={product.precio}></span>
+              <button onClick={() => onAddProduct(product)} className='boton-producto'>
+                Añadir al carrito
+              </button>
+            </div>
+          ))}
         </div>
-        ) )}
-        </div>
-        </section>
-  )
-}
+      </section>
+    );
+  };
+  
 
 
 export default ProductList

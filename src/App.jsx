@@ -1,35 +1,34 @@
 import { useState } from "react";
 
-import Header from "./components/Header";
-import ProductList from "./components/ProductList";
+import { Header } from "./components/Header";
+import { ProductList } from "./components/ProductList";
 
 function app(){
-    const [allProducts, setAllProducts] = useState([]);
+
+    const [productoCarro, setearCarro] = useState([]);
     const [total, setTotal]= useState(0);
-    const [countProducts, setCountProducts] = useState(0);
+    const [contadorProductos, setearContador] = useState(0);
 
 
 
     return(
-
-
         <>
-
-        <Header allProducts = {allProducts}
-        setAllProducts = {setAllProducts}
+        <Header 
+        productoCarro = {productoCarro}
+        setearCarro = {setearCarro}
         total={total}
         setTotal={setTotal}
-        countProducts={countProducts}
-        setCountProducts ={setCountProducts} />
-        <ProductList 
-        allProducts = {allProducts}
-        setAllProducts = {setAllProducts}
-        total={total}
-        setTotal={setTotal}
-        countProducts={countProducts}
-        setCountProducts ={setCountProducts} 
+        contadorProductos={contadorProductos}
+        setearContador ={setearContador} 
         />
-
+        <ProductList 
+        productoCarro = {productoCarro}
+        setearCarro = {setearCarro}
+        total={total}
+        setTotal={setTotal}
+        contadorProductos={contadorProductos}
+        setearContador ={setearContador} 
+        />
         </>
     );
 
