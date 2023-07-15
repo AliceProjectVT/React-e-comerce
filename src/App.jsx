@@ -1,6 +1,6 @@
 import { useState } from "react";
-
-import { Header } from "./components/Header";
+import {CartWidget} from "./components/CartWidget";
+import { NavBar } from "./components/NavBar";
 import { ProductList } from "./components/ProductList";
 
 function app(){
@@ -13,7 +13,7 @@ function app(){
 
     return(
         <>
-        <Header 
+        <NavBar 
         productoCarro = {productoCarro}
         setearCarro = {setearCarro}
         total={total}
