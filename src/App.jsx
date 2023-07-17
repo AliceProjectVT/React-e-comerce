@@ -33,8 +33,8 @@ function App() {
               />
             }
           />
-          
-          <Route path="*" element="Que miras bobo, anda pa'lla bobo" />
+          <Route path="/categoria/:idCategoria"  element= {<ItemListContainer/>} />
+                      <Route path="*" element="Que miras bobo, anda pa'lla bobo" />
         </Routes>
       </BrowserRouter>
     </>

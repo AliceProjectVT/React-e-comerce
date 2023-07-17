@@ -12,8 +12,8 @@ export const NavBar = ( {productoCarro, setearCarro, total, contadorProductos}) 
         </Link>
         <li> <NavLink to="/" >  Todos los productos </NavLink>  </li>
         <li> <NavLink to="/categoria/abarrotes">  Abarrotes           </NavLink>  </li>
-        <li> <NavLink to="/Frutas">  Frutas              </NavLink>  </li>
-        <li> <NavLink to="/Verduras">  Verduras            </NavLink>   </li>
+        <li> <NavLink to="/categoria/frutas">  Frutas              </NavLink>  </li>
+        <li> <NavLink to="/categoria/vegetales">  Verduras            </NavLink>   </li>
         <CartWidget productoCarro={productoCarro} setearCarro={setearCarro} total={total} contadorProductos={contadorProductos} />
         <br />
       </header>
