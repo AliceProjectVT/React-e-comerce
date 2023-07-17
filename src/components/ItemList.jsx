@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { data } from '../data'
+import { useParams } from 'react-router-dom';
 
-
-export const ProductList = ({ productoCarro, setearCarro, contadorProductos, setearContador, total,setTotal }) => {
+export const ItemList = ({ productoCarro, setearCarro, contadorProductos, setearContador, total,setTotal }) => {
     const onAddProduct = (product) => {
         if(productoCarro.find(item => item.id === product.id)){
             const products = productoCarro.map(item => 
@@ -21,7 +21,8 @@ export const ProductList = ({ productoCarro, setearCarro, contadorProductos, set
     };
   
     
-  
+   
+    
     return (
       <section className='contenedor'>
         <div className='contenedor-producto'>
@@ -42,4 +43,4 @@ export const ProductList = ({ productoCarro, setearCarro, contadorProductos, set
   
 
 
-export default ProductList
+export default ItemList

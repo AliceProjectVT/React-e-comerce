@@ -137,3 +137,41 @@ export const data = [
 
     ]
     
+    export const getProduct= () => {
+      return new Promise ((res )=> {
+        setTimeout(() =>{
+          res(misProductos)
+
+        }, 5000)
+
+      })
+
+    }
+
+    export const getUnProduct = (id) => {
+      return new Promise (resolve =>{
+        setTimeout(()=> {
+          const producto = misProductos.find(prod.id === id );
+            resolve(producto);
+            
+
+        }, 5000)
+
+      })
+    }
+
+
+
+    export const getCategorias = (idCat) => {
+      return new Promise( resolve =>{
+          setTimeout(()=> {
+            const productosCategoria = misProductos.filter(prod => prod.categoria ===  idCat);
+            resolve(productosCategoria);
+
+
+          }, 2000)
+
+      } )
+
+
+    }
