@@ -1,5 +1,5 @@
 import React,{ useState } from 'react'
-import CartWidget from './CartWidget'
+import CartWidget from './CartWidget/CartWidget'
 import { Link, NavLink } from "react-router-dom";
 
 

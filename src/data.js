@@ -1,4 +1,4 @@
-export const data = [
+export const misProductos = [
     {
         "nombre": "Arroz",
         "alt": "Foto Arroz",
@@ -142,7 +142,7 @@ export const data = [
         setTimeout(() =>{
           res(misProductos)
 
-        }, 5000)
+        }, 1000)
 
       })
 
@@ -155,7 +155,7 @@ export const data = [
             resolve(producto);
             
 
-        }, 5000)
+        }, 200)
 
       })
     }
@@ -169,7 +169,7 @@ export const data = [
             resolve(productosCategoria);
 
 
-          }, 2000)
+          }, 200)
 
       } )
 
