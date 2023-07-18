@@ -35,7 +35,8 @@ function App() {
               />
             }
           />
-          <Route path="/categoria/:idCategoria"  element= {<ItemListContainer/>} />
+          <Route path="/categoria/:idCategoria"  element= {<ItemListContainer 
+                 />} />
           <Route path="/item/:id" element= {<ItemDetailContainer/>} />
                       <Route path="*" element="Que miras bobo, anda pa'lla bobo" />
         </Routes>

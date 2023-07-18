@@ -1,3 +1,8 @@
+
+
+
+
+
 const ItemDetail = ({id, nombre, precio, img}) => {
     return (
       <div className='contenedorItem'>
