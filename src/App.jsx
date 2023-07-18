@@ -2,6 +2,8 @@ import { useState } from "react";
 import { NavBar } from "./components/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ItemDetail from "./components/ItemDetail/ItemDetail";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 
 function App() {
   const [productoCarro, setearCarro] = useState([]);
@@ -34,6 +36,7 @@ function App() {
             }
           />
           <Route path="/categoria/:idCategoria"  element= {<ItemListContainer/>} />
+          <Route path="/item/:id" element= {<ItemDetailContainer/>} />
                       <Route path="*" element="Que miras bobo, anda pa'lla bobo" />
         </Routes>
       </BrowserRouter>
