@@ -1,25 +1,23 @@
-import React from 'react'
-import { useEffect, useState } from 'react'
-import {getUnProduct} from "../../data"
-import {ItemDetail} from '../ItemDetail/ItemDetail'
-import {useParams} from "react-router-dom"
+import React, { useEffect, useState } from 'react';
+import { getUnProduct } from '../../data';
+import ItemDetail from '../ItemDetail/ItemDetail';
+import { useParams } from 'react-router-dom';
+
 const ItemDetailContainer = () => {
+  const [producto, setProducto] = useState(null);
+  const { id } = useParams();
 
-    const [product, setProduct] = useState(null);
-    const {idItem} = useParams();
+  useEffect(() => {
+    getUnProduct(id)
+      .then((res) => setProducto(res))
+      .catch((error) => console.log(error));
+  }, [id]);
 
-    useEffect(()=>{
-        getUnProduct(idItem)
-        .then(res=> setProduct(res))
-
-
-    }, [idItem])
-   
   return (
     <div>
-        <ItemDetail {... product}/>
+     <ItemDetail  {... producto}/>
     </div>
-  )
-}
+  );
+};
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

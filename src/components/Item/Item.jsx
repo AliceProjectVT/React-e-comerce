@@ -31,7 +31,7 @@ export const Item = ({ id, nombre, alt, imagen, precio, productoCarro, setearCar
       <button className="boton-producto"  >
       <Link className='link-sin-estilo' to={`/item/${id}`}> Detalles </Link>
       </button>
-      </section>
+      </section> 
     </div>
   );
 };
